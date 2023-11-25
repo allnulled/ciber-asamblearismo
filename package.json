@@ -1,0 +1,29 @@
+{
+  "name": "ciber-asamblearismo",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "npx nodemon -w '**/*.js' -x 'npm start'",
+    "build-docs": "./node_modules/.bin/javadoc -i '**/*.js' -e '**/node_modules/**' '**/calo.calo' '**/calo.js' -f json -o reference/javadoc.json && node reference/build.js",
+    "build-ui": "cp src/Interface/www/index.1.html src/Interface/www/index.html",
+    "start": "node src/main.js",
+    "test": "node test/test.js"
+  },
+  "keywords": [],
+  "author": "https://github.com/allnulled",
+  "license": "WTFPL",
+  "dependencies": {
+    "@allnulled/check-that": "^0.0.2",
+    "basic-sql-query-builder-orm-framework": "^1.0.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "sqlstring": "^2.3.3"
+  },
+  "devDependencies": {
+    "javadoc": "^2.0.2"
+  }
+}

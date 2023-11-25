@@ -1,0 +1,177 @@
+importo módulo es5 de ruta __dirname + "/lib/calo/calo.js".
+
+
+
+creo main como una función asíncrona donde {
+  
+  ### Inicio de tests ###
+  imprimo "[*] Inicio de tests".
+  imprimo "[*] Se cargan los tests".
+  
+  creo testLogin como una función asíncrona con (options) donde {
+    imprimo "[*] Test de /Login".
+    creo nombre como "admin".
+    creo contrasenya como "admin".
+    creo respuesta_1 como asíncronamente una petición http
+      con url "http://127.0.0.1:5054/Login"
+      con método "POST"
+      con cuerpo { nombre, contrasenya }
+      con cabeceras {}
+      en errores lanzo error.
+    compruebo que respuesta_1.data es tipo objeto.
+    compruebo que respuesta_1.data.data es tipo objeto.
+    compruebo que respuesta_1.data.data.sesion es tipo objeto.
+    compruebo que respuesta_1.data.data.sesion.token es tipo texto.
+    asigno options.token_de_sesion como respuesta_1.data.data.sesion.token.
+  }.
+
+  creo testCreateUser como una función asíncrona con (options) donde {
+    imprimo "[*] Test de /CreateUser".
+    creo respuesta_1 como asíncronamente una petición http
+      con url "http://127.0.0.1:5054/CreateUser"
+      con método "POST"
+      con cuerpo {
+        nombre: "noadmin2",
+        contrasenya: "noadmin2",
+        correo: "noadmin2@admins.org"
+      }
+      con cabeceras { authorization: options.token_de_sesion }
+      en errores lanzo error.
+    compruebo que respuesta_1.data es tipo objeto.
+    compruebo que respuesta_1.data.data es tipo objeto.
+    compruebo que respuesta_1.data.data.id es tipo número normal.
+    asigno options.id_usuario como respuesta_1.data.data.id.
+  }.
+
+  creo testCreateVotation como una función asíncrona con (options) donde {
+    imprimo "[*] Test de /CreateVotation".
+    creo respuesta_1 como asíncronamente una petición http
+      con url "http://127.0.0.1:5054/CreateVotation"
+      con método "POST"
+      con cuerpo {
+        presentacion: "Esta votación es la del año tal.",
+        fecha_de_fase_1: "2023/10/01 15:00:00.000",
+        fecha_de_fase_2: "2023/10/02 15:00:00.000",
+        fecha_de_fase_3: "2023/10/03 15:00:00.000",
+        fecha_de_fase_4: "2023/10/04 15:00:00.000",
+        fecha_de_fase_5: "2023/10/05 15:00:00.000",
+        fecha_de_fase_6: "2023/10/06 15:00:00.000",
+        fecha_de_fase_7: "2023/10/07 15:00:00.000",
+        fecha_de_fase_8: "2023/10/08 15:00:00.000",
+        fecha_de_fase_9: "2023/10/09 15:00:00.000"
+      }
+      con cabeceras { authorization: options.token_de_sesion }
+      en errores lanzo error.
+    compruebo que respuesta_1.data es tipo objeto.
+    compruebo que respuesta_1.data.data es tipo objeto.
+    compruebo que respuesta_1.data.data.id es tipo número normal.
+    asigno options.id_votacion como respuesta_1.data.data.id.
+  }.
+
+  creo testProgressVotation como una función asíncrona con (options) donde {
+    imprimo "[*] Test de /ProgressVotation".
+    creo respuesta_1 como asíncronamente una petición http
+      con url "http://127.0.0.1:5054/ProgressVotation"
+      con método "POST"
+      con cuerpo {
+        id_votacion: options.id_votacion
+      }
+      con cabeceras { authorization: options.token_de_sesion }
+      en errores lanzo error.
+    compruebo que respuesta_1.data es tipo objeto.
+    compruebo que respuesta_1.data.data es tipo objeto.
+    asigno options.id_votacion como respuesta_1.data.data.id.
+  }.
+
+  creo testCreateProblem como una función asíncrona con (options, args) donde {
+    imprimo "[*] Test de /CreateProblem".
+    creo respuesta_1 como asíncronamente una petición http
+      con url "http://127.0.0.1:5054/CreateProblem"
+      con método "POST"
+      con cuerpo {
+        titulo: args.titulo,
+        descripcion: args.descripcion,
+        contenido: args.contenido,
+        id_votacion: options.id_votacion
+      }
+      con cabeceras { authorization: options.token_de_sesion }
+      en errores lanzo error.
+    compruebo que respuesta_1.data es tipo objeto.
+    compruebo que respuesta_1.data.data es tipo objeto.
+    asigno options.id_problema como respuesta_1.data.data.id.
+  }.
+
+  creo testVoteProblem como una función asíncrona con (options, args) donde {
+    imprimo "[*] Test de /VoteGiven".
+    creo respuesta_1 como asíncronamente una petición http
+      con url "http://127.0.0.1:5054/VoteGiven"
+      con método "POST"
+      con cuerpo {
+        id_problema: options.id_problema,
+        sentido: "positivo"
+      }
+      con cabeceras { authorization: options.token_de_sesion }
+      en errores lanzo error.
+    compruebo que respuesta_1.data es tipo objeto.
+    compruebo que respuesta_1.data.data es tipo objeto.
+    asigno options.id_voto como respuesta_1.data.data.id.
+  }.
+
+  creo testCreateSolution como una función asíncrona con (options, args) donde {
+    imprimo "[*] Test de /CreateSolution".
+    creo respuesta_1 como asíncronamente una petición http
+      con url "http://127.0.0.1:5054/CreateSolution"
+      con método "POST"
+      con cuerpo {
+        titulo: args.titulo,
+        descripcion: args.descripcion,
+        contenido: args.contenido,
+        id_problema_clasificado: options.id_problema_clasificado
+      }
+      con cabeceras { authorization: options.token_de_sesion }
+      en errores lanzo error.
+    compruebo que respuesta_1.data es tipo objeto.
+    compruebo que respuesta_1.data.data es tipo objeto.
+    asigno options.id_problema como respuesta_1.data.data.id.
+  }.
+
+  creo testLogout como una función asíncrona con (options) donde {
+    imprimo "[*] Test de /Logout".
+    creo respuesta_1 como asíncronamente una petición http
+      con url "http://127.0.0.1:5054/Logout"
+      con método "POST"
+      con cuerpo {}
+      con cabeceras { authorization: options.token_de_sesion }
+      en errores lanzo error.
+    compruebo que respuesta_1.data es tipo objeto.
+    compruebo que respuesta_1.data.data es tipo objeto.
+    compruebo que respuesta_1.data.data.mensaje es tipo texto.
+    compruebo que respuesta_1.data.data.mensaje es igual que "La sesión fue cancelada exitosamente".
+    asigno options.token_de_sesion como undefined.
+  }.
+
+  creo options como {
+    propiedad token_de_sesion como undefined.
+  }.
+  
+  hago asíncronamente testLogin(options).
+  hago asíncronamente testCreateUser(options).
+  hago asíncronamente testCreateVotation(options).
+  hago asíncronamente testProgressVotation(options).
+  hago asíncronamente testCreateProblem(options, {
+    titulo: "Título del problema",
+    descripcion: "Descripción del problema",
+    contenido: "Contenido del problema"
+  }).
+  hago asíncronamente testVoteProblem(options, {
+    id_problema: options.id_problema,
+    sentido: "positivo"
+  }).
+  hago asíncronamente testLogout(options).
+
+} en errores {
+  si error.response imprimo error.response.data;
+  y si no imprimo error.
+}.
+
+hago main().

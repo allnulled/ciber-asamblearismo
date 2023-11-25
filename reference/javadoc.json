@@ -1,0 +1,194 @@
+{
+  "success": [
+    [
+      {
+        "@type": [
+          " Class"
+        ],
+        "@name": [
+          " Login"
+        ],
+        "@file": [
+          " /src/Controllers/Login.js"
+        ],
+        "@module": [
+          " yes"
+        ],
+        "file": "/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/Login.js"
+      },
+      {
+        "@type": [
+          " Class property"
+        ],
+        "@name": [
+          " method"
+        ],
+        "@file": [
+          " /src/Controllers/Login.js"
+        ],
+        "@module": [
+          " no"
+        ],
+        "@value": [
+          " \"use\" "
+        ],
+        "@description": [
+          " Defines the method by which `express` will mount the controller. Defaults to `\"use\"` but it is safer `\"post\"`."
+        ],
+        "file": "/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/Login.js"
+      }
+    ],
+    [
+      {
+        "@type": [
+          " Class"
+        ],
+        "@name": [
+          " ProgressVotation"
+        ],
+        "@file": [
+          " /src/Controllers/ProgressVotation.js"
+        ],
+        "@module": [
+          " yes"
+        ],
+        "file": "/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js"
+      },
+      {
+        "@type": [
+          " Class property"
+        ],
+        "@name": [
+          " method"
+        ],
+        "@file": [
+          " /src/Controllers/ProgressVotation.js"
+        ],
+        "@module": [
+          " no"
+        ],
+        "@value": [
+          " \"use\" "
+        ],
+        "@description": [
+          " Defines the method by which `express` will mount the controller. Defaults to `\"use\"` but it is safer `\"post\"`."
+        ],
+        "file": "/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js"
+      },
+      {
+        "@type": [
+          " Class property"
+        ],
+        "@name": [
+          " route"
+        ],
+        "@file": [
+          " /src/Controllers/ProgressVotation.js"
+        ],
+        "@module": [
+          " no"
+        ],
+        "@value": [
+          " \"^/ProgressVotation$\" "
+        ],
+        "@description": [
+          " Defines the route by which `express` will mount the controller. Set to \"^/ProgressVotation$\"."
+        ],
+        "file": "/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js"
+      },
+      {
+        "@type": [
+          " Class property"
+        ],
+        "@name": [
+          " priority"
+        ],
+        "@file": [
+          " /src/Controllers/ProgressVotation.js"
+        ],
+        "@module": [
+          " no"
+        ],
+        "@value": [
+          " \"^/ProgressVotation$\" "
+        ],
+        "@description": [
+          " Defines the priority by which `express` will mount the controller. Set to 5000."
+        ],
+        "file": "/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js"
+      },
+      {
+        "@type": [
+          " Class method"
+        ],
+        "@name": [
+          " getMiddleware"
+        ],
+        "@file": [
+          " /src/Controllers/ProgressVotation.js"
+        ],
+        "@module": [
+          " no"
+        ],
+        "@value": [
+          " a function"
+        ],
+        "@description": [
+          " Defines the middlewares used by `express` while mounting the controller. This function by default returns an empty array."
+        ],
+        "file": "/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js"
+      },
+      {
+        "@type": [
+          " Class property"
+        ],
+        "@name": [
+          " progressSteps"
+        ],
+        "@file": [
+          " /src/Controllers/ProgressVotation.js"
+        ],
+        "@module": [
+          " no"
+        ],
+        "@value": [
+          " a function"
+        ],
+        "@description": [
+          " Defines the steps followed by any votation. By default, it contains 9 elements:\n\n   - \"1. Presentation\",\n   - \"2. Problems/open\",\n   - \"3. Problems/classification\",\n   - \"4. Solutions/open\",\n   - \"5. Solutions/classification\",\n   - \"6. Implementations/open\",\n   - \"7. Implementations/classification\",\n   - \"8. Changes/application\",\n   - \"9. Historical\"\n"
+        ],
+        "file": "/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js"
+      },
+      {
+        "@type": [
+          " Class method"
+        ],
+        "@name": [
+          " dispatch"
+        ],
+        "@file": [
+          " /src/Controllers/ProgressVotation.js"
+        ],
+        "@module": [
+          " no"
+        ],
+        "@value": [
+          " a function"
+        ],
+        "@parameter": [
+          " `request` - an Object",
+          " `response` - an Object",
+          " `next` - a Function"
+        ],
+        "@returns": [
+          " anything"
+        ],
+        "@description": [
+          " Per order, follows these procedures:\n\n  - prepares the data\n  - `this.formatParameters(data)`\n  - `this.validateParameters(data)`\n  - `this.updateData(data)`\n  - `this.executeQuery(data)`"
+        ],
+        "file": "/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js"
+      }
+    ]
+  ],
+  "error": []
+}
