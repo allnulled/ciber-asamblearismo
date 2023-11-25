@@ -1,6 +1,8 @@
 # ciber-asamblearismo
 
-Código fuente de un servidor minimalista para la organización civil *(ciber)* asamblearia. 
+Código fuente de un servidor minimalista para la organización civil *(ciber)* asamblearia.
+
+Este proyecto está en proceso.
 
 ## Índice
 
