@@ -7,6 +7,7 @@
 module.exports = class {
     
     /**
+     * @title ProgressVotation.method
      * @type Class property
      * @name method
      * @file /src/Controllers/ProgressVotation.js
@@ -17,6 +18,7 @@ module.exports = class {
     method = "use";
     
     /**
+     * @title ProgressVotation.route
      * @type Class property
      * @name route
      * @file /src/Controllers/ProgressVotation.js
@@ -27,6 +29,7 @@ module.exports = class {
     route = "^/ProgressVotation$";
 
     /**
+     * @title ProgressVotation.priority
      * @type Class property
      * @name priority
      * @file /src/Controllers/ProgressVotation.js
@@ -37,6 +40,7 @@ module.exports = class {
     priority = 5000;
     
     /**
+     * @title ProgressVotation.getMiddleware
      * @type Class method
      * @name getMiddleware
      * @file /src/Controllers/ProgressVotation.js
@@ -49,6 +53,7 @@ module.exports = class {
     }
 
     /**
+     * @title ProgressVotation.progressSteps
      * @type Class property
      * @name progressSteps
      * @file /src/Controllers/ProgressVotation.js
@@ -80,6 +85,7 @@ module.exports = class {
     ];
     
     /**
+     * @title ProgressVotation.dispatch
      * @type Class method
      * @name dispatch
      * @file /src/Controllers/ProgressVotation.js
@@ -118,6 +124,7 @@ module.exports = class {
         }
     }
     /**
+     * @title ProgressVotation.formatParameters
      * @type Class method
      * @name formatParameters
      * @file /src/Controllers/ProgressVotation.js
@@ -135,6 +142,7 @@ module.exports = class {
         this.api.Utilities.CheckThat(parameters.id_votacion, "id_votacion").isNumber().and.isGreaterThan(0);
     }
     /**
+     * @title ProgressVotation.validateParameters
      * @type Class method
      * @name validateParameters
      * @file /src/Controllers/ProgressVotation.js
@@ -160,6 +168,7 @@ module.exports = class {
     }
 
     /**
+     * @title ProgressVotation.updateData
      * @type Class method
      * @name updateData
      * @file /src/Controllers/ProgressVotation.js

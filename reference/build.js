@@ -1,6 +1,7 @@
 const fs = require("fs");
 const javadoc = require(__dirname + "/javadoc.json");
 const comments = javadoc.success;
+console.log("[reference/build] Producing file JAVADOC.md.")
 let md = "";
 for(let index=0; index<comments.length; index++) {
   const file_comments = comments[index];
@@ -21,3 +22,4 @@ for(let index=0; index<comments.length; index++) {
   }
 }
 fs.writeFileSync(__dirname + "/JAVADOC.md", md, "utf8");
+console.log("[reference/build] File JAVADOC.md successfully produced.")

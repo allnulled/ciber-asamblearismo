@@ -1,5 +1,6 @@
 const sqlstring = require("sqlstring");
 /**
+ * @title Login
  * @type Class
  * @name Login
  * @file /src/Controllers/Login.js
@@ -8,6 +9,7 @@ const sqlstring = require("sqlstring");
 module.exports = class {
     
     /**
+     * @title Login.method
      * @type Class property
      * @name method
      * @file /src/Controllers/Login.js
@@ -17,14 +19,57 @@ module.exports = class {
      */
     method = "use";
     
+    /**
+     * @title Login.route
+     * @type Class property
+     * @name route
+     * @file /src/Controllers/Login.js
+     * @module no
+     * @value "/Login" 
+     * @description Defines the route by which `express` will mount the controller. Defaults to `"/Login"`.
+     */
     route = "/Login";
 
+    /**
+     * @title Login.priority
+     * @type Class property
+     * @name priority
+     * @file /src/Controllers/Login.js
+     * @module no
+     * @value 4000
+     * @description Defines the priority by which `express` will mount the controller. Defaults to 4000.
+     */
     priority = 4000;
     
+    /**
+     * @title Login.getMiddleware
+     * @type Class method
+     * @name getMiddleware
+     * @file /src/Controllers/Login.js
+     * @module no
+     * @value a function that returns an empty array 
+     * @description Returns the set of middlewares to be mounted before accessing the controller. Defaults to an empty array.
+     */
     getMiddleware() {
         return [];
     }
     
+    /**
+     * @title Login.dispatch
+     * @type Class method
+     * @name dispatch
+     * @file /src/Controllers/Login.js
+     * @module no
+     * @value a function 
+     * @description Follows these steps:
+     * 
+     *    - gets `nombre` and `contrasenya` by the `request`
+     *    - gets active session, if any
+     *    - if so, it returns its token
+     *    - if not, it creates a new active session
+     *    - and returns its token
+     * 
+     */
     async dispatch(request, response, next) {
         this.api.Utilities.Trace("api.Controllers.Login");
         try {
