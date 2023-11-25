@@ -16,8 +16,14 @@ for(let index=0; index<comments.length; index++) {
     for(let index3=0; index3<keys.length; index3++) {
       const key = keys[index3];
       const value = comment[key];
-      md += "\n- **`" + key + "`:**";
-      md += value;
+      const key_string = "\n- **`" + key + "`:**";
+      // md += key_string;
+      if(Array.isArray(value)) {
+        for(let index4=0; index4<value.length; index4++) {
+          const subvalue = value[index4];
+          md += key_string + subvalue;
+        }
+      }
     }
   }
 }

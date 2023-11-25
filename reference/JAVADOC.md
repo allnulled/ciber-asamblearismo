@@ -11,7 +11,6 @@
 - **`@name`:** Login
 - **`@file`:** /src/Controllers/Login.js
 - **`@module`:** yes
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/Login.js
 
 ------
 
@@ -22,7 +21,6 @@
 - **`@module`:** no
 - **`@value`:** "use" 
 - **`@description`:** Defines the method by which `express` will mount the controller. Defaults to `"use"` but it is safer `"post"`.
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/Login.js
 
 ------
 
@@ -33,7 +31,6 @@
 - **`@module`:** no
 - **`@value`:** "/Login" 
 - **`@description`:** Defines the route by which `express` will mount the controller. Defaults to `"/Login"`.
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/Login.js
 
 ------
 
@@ -44,7 +41,6 @@
 - **`@module`:** no
 - **`@value`:** 4000
 - **`@description`:** Defines the priority by which `express` will mount the controller. Defaults to 4000.
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/Login.js
 
 ------
 
@@ -55,7 +51,6 @@
 - **`@module`:** no
 - **`@value`:** a function that returns an empty array 
 - **`@description`:** Returns the set of middlewares to be mounted before accessing the controller. Defaults to an empty array.
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/Login.js
 
 ------
 
@@ -73,7 +68,6 @@
    - if not, it creates a new active session
    - and returns its token
 
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/Login.js
 
 ------
 
@@ -85,7 +79,6 @@
 - **`@name`:** ProgressVotation
 - **`@file`:** /src/Controllers/ProgressVotation.js
 - **`@module`:** yes
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
 
 ------
 
@@ -96,7 +89,6 @@
 - **`@module`:** no
 - **`@value`:** "use" 
 - **`@description`:** Defines the method by which `express` will mount the controller. Defaults to `"use"` but it is safer `"post"`.
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
 
 ------
 
@@ -107,7 +99,6 @@
 - **`@module`:** no
 - **`@value`:** "^/ProgressVotation$" 
 - **`@description`:** Defines the route by which `express` will mount the controller. Set to "^/ProgressVotation$".
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
 
 ------
 
@@ -118,7 +109,6 @@
 - **`@module`:** no
 - **`@value`:** "^/ProgressVotation$" 
 - **`@description`:** Defines the priority by which `express` will mount the controller. Set to 5000.
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
 
 ------
 
@@ -129,7 +119,6 @@
 - **`@module`:** no
 - **`@value`:** a function
 - **`@description`:** Defines the middlewares used by `express` while mounting the controller. This function by default returns an empty array.
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
 
 ------
 
@@ -151,7 +140,6 @@
    - "8. Changes/application",
    - "9. Historical"
 
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
 
 ------
 
@@ -161,7 +149,9 @@
 - **`@file`:** /src/Controllers/ProgressVotation.js
 - **`@module`:** no
 - **`@value`:** a function
-- **`@parameter`:** `request` - an Object, `response` - an Object, `next` - a Function
+- **`@parameter`:** `request` - an Object
+- **`@parameter`:** `response` - an Object
+- **`@parameter`:** `next` - a Function
 - **`@returns`:** anything
 - **`@description`:** Per order, follows these procedures:
 
@@ -171,7 +161,6 @@
   - calls `this.updateData(data)`
   - calls `this.executeQuery(data)`
 
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
 
 ------
 
@@ -185,7 +174,6 @@
 - **`@parameter`:** `data` - an Object
 - **`@returns`:** anything
 - **`@description`:** Sets `data.parameters.id_votacion` from `request` and `id_votacion`.
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
 
 ------
 
@@ -203,7 +191,6 @@
   - Queries database by `votacion` where `id` equals `data.parameters.id_votacion`.
   - Sets that votacion to `parameters.votacion`.
 
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
 
 ------
 
@@ -222,5 +209,3 @@
   - If `votacion.estado` equals "4. Solutions/open" then it calls `this.migrateClassifiedSolutions`.
   - If `votacion.estado` equals "6. Implementations/open" then it calls `this.migrateClassifiedImplementations`.
   - If `votacion.estado` equals "8. Changes/application" then it calls `this.migrateChanges`.
-
-- **`file`:**/home/carlos/Software/Nodejs/democracia-directa-minimal-3/src/Controllers/ProgressVotation.js
